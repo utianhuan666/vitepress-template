@@ -1,0 +1,58 @@
+/* 修复首页标题和副标题截断问题 */
+.VPHero .name,
+.VPHero .text {
+  max-width: none !important;
+  white-space: nowrap;
+  overflow: visible !important;
+}
+
+.VPHero .clip {
+  background: linear-gradient(120deg, #bd34fe 30%, #41d1ff) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-size: clamp(2.5rem, 8vw, 4.5rem) !important;
+  line-height: 1.2 !important;
+  word-break: keep-all !important;
+}
+
+.VPHero .text {
+  font-size: clamp(1.2rem, 4vw, 2rem) !important;
+  line-height: 1.4 !important;
+  color: var(--vp-c-text-2) !important;
+  font-weight: 500 !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .VPHero .name {
+    font-size: clamp(1.8rem, 7vw, 3rem) !important;
+  }
+  
+  .VPHero .clip {
+    font-size: clamp(1.8rem, 7vw, 3rem) !important;
+  }
+  
+  .VPHero .text {
+    font-size: clamp(1rem, 3.5vw, 1.5rem) !important;
+  }
+}
+
+/* 确保容器有足够空间 */
+.VPHero .container {
+  max-width: none !important;
+}
+
+.VPHero .main {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* 标题区域整体布局优化 */
+.VPHero .title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
