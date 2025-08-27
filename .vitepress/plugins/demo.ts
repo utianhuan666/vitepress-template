@@ -1,5 +1,5 @@
-import path from 'path'
-import fs from 'fs'
+import { readFileSync } from 'fs'
+import { resolve } from 'path'
 import MarkdownIt from 'markdown-it'
 import mdContainer from 'markdown-it-container'
 import { highlight } from '../utils/highlight'
@@ -29,8 +29,8 @@ export const demoBlockPlugin = (md: MarkdownIt, options: DemoBlockOptions = {}) 
         const sourceFile = sourceFileToken.children?.[0].content ?? ''
 
         if (sourceFileToken.type === 'inline') {
-          source = fs.readFileSync(
-            path.resolve(env.docDir, 'examples', `${sourceFile}.vue`),
+          source = readFileSync(
+            resolve(env.docDir, 'examples', `${sourceFile}.vue`),
             'utf-8'
           )
           rawSource = encodeURIComponent(source)
