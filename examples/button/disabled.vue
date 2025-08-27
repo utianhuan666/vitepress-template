@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-import { NButton, NSpace } from "naive-ui";
+// 使用全局注册的 <n-button> 和 <n-space>，无需导入
 </script>

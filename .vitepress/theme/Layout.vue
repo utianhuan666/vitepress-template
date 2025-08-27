@@ -1,29 +1,24 @@
 <template>
-  <n-config-provider :theme="theme">
-    <n-message-provider>
-      <n-notification-provider>
-        <n-dialog-provider>
-          <Layout />
-        </n-dialog-provider>
-      </n-notification-provider>
-    </n-message-provider>
-  </n-config-provider>
+  <ClientOnly>
+    <n-config-provider :theme="theme">
+      <n-message-provider>
+        <n-notification-provider>
+          <n-dialog-provider>
+            <Layout />
+          </n-dialog-provider>
+        </n-notification-provider>
+      </n-message-provider>
+    </n-config-provider>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
 import { computed } from "vue";
 import { useData } from "vitepress";
-import {
-  NConfigProvider,
-  NMessageProvider,
-  NNotificationProvider,
-  NDialogProvider,
-  darkTheme,
-} from "naive-ui";
+import { darkTheme } from "naive-ui";
 import DefaultTheme from "vitepress/theme";
 
 const { Layout } = DefaultTheme;
-
 const { isDark } = useData();
 
 const theme = computed(() => {

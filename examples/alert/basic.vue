@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { NAlert } from 'naive-ui'
+// 使用全局注册的 <n-alert>，无需导入
 </script>
 
 <style scoped>

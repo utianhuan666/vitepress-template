@@ -1,7 +1,10 @@
 node_modules
 dist
 
-.vitepress/cache/*
+# VitePress cache and temp files
+.vitepress/cache/
+.vitepress/.temp/
+.vitepress/dist/
 .codebuddy/*
 
 

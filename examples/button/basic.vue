@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { NButton } from 'naive-ui'
+// 使用全局注册的 <n-button>，无需导入
 </script>
 
 <style scoped>

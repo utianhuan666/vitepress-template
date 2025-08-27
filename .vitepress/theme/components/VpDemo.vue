@@ -1,16 +1,8 @@
 <script setup lang="ts">
 import { computed, getCurrentInstance, ref, toRef } from "vue";
 import { isClient, useClipboard, useToggle } from "@vueuse/core";
-import {
-  NButton,
-  NIcon,
-  NTooltip,
-  NCollapse,
-  NCollapseItem,
-  useMessage,
-} from "naive-ui";
 import { CodeOutline, CopyOutline, ChevronUpOutline } from "@vicons/ionicons5";
-import SourceCode from "./demo/VpSourceCode.vue";
+import { useMessage } from "naive-ui";
 
 const props = defineProps<{
   source: string;
@@ -57,69 +49,71 @@ const onSourceVisibleKeydown = (e: KeyboardEvent) => {
 </script>
 
 <template>
-  <div
-    class="demo-description"
-    v-if="decodedDescription"
-    v-html="decodedDescription"
-  />
-
-  <div class="example">
-    <div class="example-showcase">
-      <slot name="source" />
-    </div>
-
-    <div class="example-divider"></div>
-
-    <div class="op-btns">
-      <n-tooltip trigger="hover">
-        <template #trigger>
-          <n-button quaternary circle size="small" @click="copyCode">
-            <template #icon>
-              <n-icon>
-                <CopyOutline />
-              </n-icon>
-            </template>
-          </n-button>
-        </template>
-        复制代码
-      </n-tooltip>
-
-      <n-tooltip trigger="hover">
-        <template #trigger>
-          <n-button
-            ref="sourceCodeRef"
-            quaternary
-            circle
-            size="small"
-            @click="toggleSourceVisible()"
-          >
-            <template #icon>
-              <n-icon>
-                <CodeOutline />
-              </n-icon>
-            </template>
-          </n-button>
-        </template>
-        {{ sourceVisible ? "隐藏源码" : "查看源码" }}
-      </n-tooltip>
-    </div>
-
-    <SourceCode :visible="sourceVisible" :source="source" />
-
+  <ClientOnly>
     <div
-      v-show="sourceVisible"
-      class="example-float-control"
-      tabindex="0"
-      role="button"
-      @click="toggleSourceVisible(false)"
-      @keydown="onSourceVisibleKeydown"
-    >
-      <n-icon size="16">
-        <ChevronUpOutline />
-      </n-icon>
-      <span>隐藏源码</span>
+      class="demo-description"
+      v-if="decodedDescription"
+      v-html="decodedDescription"
+    />
+
+    <div class="example">
+      <div class="example-showcase">
+        <slot name="source" />
+      </div>
+
+      <div class="example-divider"></div>
+
+      <div class="op-btns">
+        <n-tooltip trigger="hover">
+          <template #trigger>
+            <n-button quaternary circle size="small" @click="copyCode">
+              <template #icon>
+                <n-icon>
+                  <CopyOutline />
+                </n-icon>
+              </template>
+            </n-button>
+          </template>
+          复制代码
+        </n-tooltip>
+
+        <n-tooltip trigger="hover">
+          <template #trigger>
+            <n-button
+              ref="sourceCodeRef"
+              quaternary
+              circle
+              size="small"
+              @click="toggleSourceVisible()"
+            >
+              <template #icon>
+                <n-icon>
+                  <CodeOutline />
+                </n-icon>
+              </template>
+            </n-button>
+          </template>
+          {{ sourceVisible ? "隐藏源码" : "查看源码" }}
+        </n-tooltip>
+      </div>
+
+      <SourceCode :visible="sourceVisible" :source="source" />
+
+      <div
+        v-show="sourceVisible"
+        class="example-float-control"
+        tabindex="0"
+        role="button"
+        @click="toggleSourceVisible(false)"
+        @keydown="onSourceVisibleKeydown"
+      >
+        <n-icon size="16">
+          <ChevronUpOutline />
+        </n-icon>
+        <span>隐藏源码</span>
+      </div>
     </div>
-  </div>
+  </ClientOnly>
 </template>
 
 <style scoped>
