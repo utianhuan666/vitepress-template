@@ -36,7 +36,7 @@ export default defineConfig({
     socialLinks: [
       {
         icon: "github",
-        link: "https://github.com/your-username/procomponents-naiveui",
+        link: "https://github.com/your-username/EasyComponents-naiveui",
       },
     ],
   },

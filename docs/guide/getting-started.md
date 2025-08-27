@@ -4,11 +4,11 @@
 
 ```js
 import { createApp } from 'vue'
-import ProComponents from 'pro-components'
+import EasyComponents from 'pro-components'
 import 'pro-components/dist/style.css'
 
 const app = createApp(App)
-app.use(ProComponents)
+app.use(EasyComponents)
 ```
 
 ## 按需引入

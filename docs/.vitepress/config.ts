@@ -1,7 +1,7 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: 'ProComponents',
+  title: 'EasyComponents',
   description: 'NaiveUI 高级组件库',
   
   themeConfig: {

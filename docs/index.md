@@ -2,12 +2,12 @@
 layout: home
 
 hero:
-  name: "ProComponents"
+  name: "EasyComponents"
   text: "NaiveUI 高级组件库"
   tagline: 简单、强大、高性能的企业级组件解决方案
   image:
     src: /logo.webp
-    alt: ProComponents
+    alt: EasyComponents
   actions:
     - theme: brand
       text: 快速开始

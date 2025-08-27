@@ -1,6 +1,6 @@
 # 组件概览
 
-ProComponents 提供了一系列基于 Naive UI 的高级组件，帮助您快速构建企业级应用。
+EasyComponents 提供了一系列基于 Naive UI 的高级组件，帮助您快速构建企业级应用。
 
 ## 组件列表
 

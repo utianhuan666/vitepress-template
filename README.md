@@ -1,4 +1,4 @@
-# ProComponents-NaiveUI
+# EasyComponents-NaiveUI
 
 基于 Naive UI 的高级组件库，提供企业级组件解决方案。
 
@@ -15,9 +15,9 @@
 ### 安装
 
 ```bash
-npm install procomponents-naiveui
+npm install EasyComponents-naiveui
 # 或
-pnpm add procomponents-naiveui
+pnpm add EasyComponents-naiveui
 ```
 
 ### 使用
@@ -30,7 +30,7 @@ pnpm add procomponents-naiveui
 </template>
 
 <script setup>
-import { ProButton } from 'procomponents-naiveui'
+import { ProButton } from 'EasyComponents-naiveui'
 </script>
 ```
 
