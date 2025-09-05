@@ -8,10 +8,10 @@ export default defineConfig({
       entry: 'src/index.ts',
       name: 'EasyCard',
       formats: ['es', 'cjs'],
-      fileName: fmt => (fmt === 'es' ? 'es/index.js' : 'lib/index.js')
+      fileName: (fmt, name) =>
+        fmt === 'es' ? `es/${name}.js` : `lib/${name}.js`
     },
-    rollupOptions: {
-      external: ['vue', 'naive-ui']
-    }
+    rollupOptions: { external: ['vue', 'naive-ui'] },
+    outDir: 'dist'          // ← 关键：统一 dist 根
   }
 })

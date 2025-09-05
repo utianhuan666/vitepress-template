@@ -10,7 +10,7 @@
     "es"
   ],
   "scripts": {
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir es"
+     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir dist/es"
   },
   "keywords": [],
   "author": "",
