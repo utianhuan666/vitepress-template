@@ -1,0 +1,33 @@
+{
+  "name": "@naive-ui/easy-card",
+  "version": "1.0.0",
+  "description": "@naive-ui/easy-card",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly --outDir es"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.1",
+  "dependencies": {
+    "@vicons/ionicons5": "^0.13.0"
+  },
+  "peerDependencies": {
+    "naive-ui": ">=2.26.4",
+    "vue": "^3.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/compiler-sfc": "^3.5.21",
+    "typescript": "^5.9.2",
+    "vite": "7.1.4",
+    "vue-tsc": "^3.0.6"
+  }
+}
